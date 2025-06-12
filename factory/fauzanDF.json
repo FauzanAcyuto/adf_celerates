@@ -1,0 +1,9 @@
+{
+	"name": "fauzanDF",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ebafc0b8-10bc-4d45-8f87-8a7ca7afc76f",
+		"tenantId": "6f9a06fc-f94e-4ed9-8d9e-753f28df05a1"
+	}
+}

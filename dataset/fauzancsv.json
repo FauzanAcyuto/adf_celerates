@@ -5,15 +5,52 @@
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"container": {
+				"type": "string"
+			},
+			"folder": {
+				"type": "string"
+			},
+			"file": {
+				"type": "string"
+			},
+			"columndelimiter": {
+				"type": "string",
+				"defaultValue": ","
+			},
+			"firstrowasheader": {
+				"type": "bool",
+				"defaultValue": "1"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation"
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().file",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().folder",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().container",
+					"type": "Expression"
+				}
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": {
+				"value": "@dataset().columndelimiter",
+				"type": "Expression"
+			},
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
+			"firstRowAsHeader": {
+				"value": "@dataset().firstrowasheader",
+				"type": "Expression"
+			},
 			"quoteChar": "\""
 		},
 		"schema": []
